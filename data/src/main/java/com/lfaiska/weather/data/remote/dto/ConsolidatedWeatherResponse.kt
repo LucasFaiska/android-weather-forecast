@@ -15,5 +15,5 @@ data class ConsolidatedWeatherResponse (
     @SerializedName("wind_speed")
     val windSpeed: Double,
     @SerializedName("humidity")
-    val humidity: Double
+    val humidity: Int
 )

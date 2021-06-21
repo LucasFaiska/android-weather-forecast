@@ -1,7 +1,7 @@
 package com.lfaiska.weather.data.repository
 
 import com.lfaiska.weather.data.remote.Service
-import com.lfaiska.weather.data.remote.dto.WeatherLocationResponse
+import com.lfaiska.weather.data.remote.dto.WeatherLocalResponse
 import io.mockk.*
 import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.runBlocking
@@ -26,7 +26,7 @@ class RepositoryTest {
     @Test
     fun `Given the repository get weather from service successfully then returns a WeatherLocationResponse`() {
         runBlocking {
-            val mockedWeatherLocationResponse = mockk<WeatherLocationResponse>()
+            val mockedWeatherLocationResponse = mockk<WeatherLocalResponse>()
 
             coEvery {
                 service.getWeatherFromLocation(any())
