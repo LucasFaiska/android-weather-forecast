@@ -9,12 +9,15 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.lfaiska.weather.data.BuildConfig
 import com.lfaiska.weather.data.remote.Service
+import com.lfaiska.weather.data.repository.Repository
+import com.lfaiska.weather.data.repository.RepositoryImpl
 
 val dataModule = module {
     single { provideGson() }
     single { provideHttpClient() }
     single { provideRetrofit(get(), get()) }
     single { provideService(get()) }
+    single { provideRepository(get()) }
 }
 
 fun provideGson(): Gson {
@@ -36,4 +39,8 @@ fun provideRetrofit(factory: Gson, client: OkHttpClient): Retrofit {
 
 fun provideService(retrofit: Retrofit): Service {
     return retrofit.create(Service::class.java)
+}
+
+fun provideRepository(service: Service): Repository {
+    return RepositoryImpl(service)
 }

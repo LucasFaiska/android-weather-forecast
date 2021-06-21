@@ -2,4 +2,7 @@
     <string name="app_name">Android Weather Forecast</string>
 
     <string name="splash_screen_image_content_description">Metaweather Logo</string>
+
+    <string name="empty_weather_list_message">No posts weather found.</string>
+    <string name="weather_load_failure_message">Error on load weather, please try again.</string>
 </resources>

@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id "androidx.navigation.safeargs.kotlin"
 }
 
 android {
@@ -10,7 +11,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.lfaiska.weather.forecast"
+        applicationId "com.lfaiska.weather"
         minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
@@ -63,6 +64,7 @@ dependencies {
     implementation "org.koin:koin-android:2.1.6"
     implementation "org.koin:koin-androidx-viewmodel:2.1.6"
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation "androidx.cardview:cardview:1.0.0"
 
     implementation "com.github.bumptech.glide:glide:4.12.0"
     annotationProcessor "com.github.bumptech.glide:compiler:4.12.0"

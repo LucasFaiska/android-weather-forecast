@@ -5,6 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface Service {
-    @GET("location/{locationId}")
+    @GET("api/location/{locationId}")
     suspend fun getWeatherFromLocation(@Path("locationId") locationId: String): WeatherLocalResponse
 }

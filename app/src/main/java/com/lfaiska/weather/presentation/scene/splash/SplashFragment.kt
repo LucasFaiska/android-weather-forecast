@@ -1,4 +1,4 @@
-package com.lfaiska.weather.presentation.scenes.splash
+package com.lfaiska.weather.presentation.scene.splash
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.lfaiska.weather.forecast.R
-import com.lfaiska.weather.forecast.databinding.FragmentSplashBinding
+import androidx.navigation.findNavController
+import com.lfaiska.weather.R
+import com.lfaiska.weather.databinding.FragmentSplashBinding
 import org.koin.androidx.viewmodel.compat.ViewModelCompat.viewModel
 
 class SplashFragment : Fragment() {
@@ -20,6 +21,13 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_splash, container, false)
+        setupObservers()
         return binding.root
+    }
+
+    private fun setupObservers() {
+        splashViewModel.navigateToNextScene.observe(viewLifecycleOwner,  {
+            binding.root.findNavController().navigate(SplashFragmentDirections.navigateToWeatherList())
+        })
     }
 }

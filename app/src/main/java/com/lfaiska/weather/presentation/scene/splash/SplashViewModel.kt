@@ -1,4 +1,4 @@
-package com.lfaiska.weather.presentation.scenes.splash
+package com.lfaiska.weather.presentation.scene.splash
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
