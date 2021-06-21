@@ -24,7 +24,7 @@ class RepositoryTest {
     }
 
     @Test
-    fun `Given the repository get weather from service sucessfully then returns a WeatherLocationResponse`() {
+    fun `Given the repository get weather from service successfully then returns a WeatherLocationResponse`() {
         runBlocking {
             val mockedWeatherLocationResponse = mockk<WeatherLocationResponse>()
 
