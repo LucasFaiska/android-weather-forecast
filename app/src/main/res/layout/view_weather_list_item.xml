@@ -5,10 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="weather"
-            type="com.lfaiska.weather.domain.model.Weather" />
+            type="com.lfaiska.weather.presentation.model.WeatherPresentationModel" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -41,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/weather_temperature_margin_right"
-                android:text="@{weather.temperatureFormatted}"
+                android:text="@{weather.temperature}"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/weather_icon"

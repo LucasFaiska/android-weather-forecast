@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lfaiska.weather.R
 import com.lfaiska.weather.databinding.FragmentWeatherListBinding
@@ -22,11 +22,8 @@ class WeatherListFragment : Fragment() {
 
     private val weatherListAdapter: WeatherListAdapter =
         WeatherListAdapter { weather ->
-            Toast.makeText(
-                this.requireActivity(),
-                weather.weekDay,
-                Toast.LENGTH_LONG
-            ).show()
+            binding.root.findNavController()
+                .navigate(WeatherListFragmentDirections.navigateToWeatherDetail(weather))
         }
 
     override fun onCreateView(
@@ -35,8 +32,12 @@ class WeatherListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         super.onCreateView(inflater, container, savedInstanceState)
-        binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_weather_list, container, false)
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_weather_list,
+            container,
+            false
+        )
         setupView()
         setupObservers()
         loadWeather()

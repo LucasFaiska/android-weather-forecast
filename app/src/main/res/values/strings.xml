@@ -5,4 +5,6 @@
 
     <string name="empty_weather_list_message">No posts weather found.</string>
     <string name="weather_load_failure_message">Error on load weather, please try again.</string>
+    <string name="windspeed_label_text">Windspeed</string>
+    <string name="humidity_label_text">Humidity</string>
 </resources>

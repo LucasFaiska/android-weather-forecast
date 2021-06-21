@@ -8,14 +8,15 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.lfaiska.weather.domain.model.Weather
 import com.lfaiska.weather.R
 import com.lfaiska.weather.databinding.ViewWeatherListItemBinding
+import com.lfaiska.weather.presentation.model.WeatherPresentationModel
 
 class WeatherListAdapter(
-    private val onWeatherSelected: (weather: Weather) -> Unit
+    private val onWeatherSelected: (weather: WeatherPresentationModel) -> Unit
 ) : RecyclerView.Adapter<WeatherListAdapter.WeatherListViewHolder>() {
 
-    private var weatherList: MutableList<Weather> = mutableListOf()
+    private var weatherList: MutableList<WeatherPresentationModel> = mutableListOf()
 
-    fun updateWeatherList(weatherList: List<Weather>) {
+    fun updateWeatherList(weatherList: List<WeatherPresentationModel>) {
         this.weatherList.clear()
         this.weatherList.addAll(weatherList)
         this.notifyDataSetChanged()
