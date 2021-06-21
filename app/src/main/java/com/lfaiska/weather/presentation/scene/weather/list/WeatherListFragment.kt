@@ -54,6 +54,10 @@ class WeatherListFragment : Fragment() {
         binding.swipeContainer.setOnRefreshListener {
             refreshWeather()
         }
+
+        binding.toolbarSettingsButton.setOnClickListener {
+            binding.root.findNavController().navigate(WeatherListFragmentDirections.navigateToSettings())
+        }
     }
 
     private fun setupObservers() {

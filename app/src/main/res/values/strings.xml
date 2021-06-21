@@ -7,4 +7,9 @@
     <string name="weather_load_failure_message">Error on load weather, please try again.</string>
     <string name="windspeed_label_text">Windspeed</string>
     <string name="humidity_label_text">Humidity</string>
+
+    <string name="settings_screen_title">Settings</string>
+    <string name="lisbon_label">Lisbon</string>
+    <string name="sao_paulo_label">São Paulo</string>
+    <string name="london_label">London</string>
 </resources>
